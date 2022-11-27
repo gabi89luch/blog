@@ -27,3 +27,14 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollPos = currentTop;
     });
 })
+
+// Scroll to top button
+const scrollTop = document.querySelector(".scrollTop"); 
+	       
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 100){
+        scrollTop.classList.add("active");
+    } else{
+        scrollTop.classList.remove("active");  
+    }
+})
