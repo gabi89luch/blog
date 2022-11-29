@@ -8,10 +8,12 @@
         "dropstart",
         "dropup",
         "focusable",
+        "hoverable",
         "hstack",
         "Luchian",
         "offcanvas",
         "Opensource",
+        "tooltiptext",
         "vstack"
     ]
 }
