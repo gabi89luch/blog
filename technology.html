@@ -181,96 +181,86 @@
       <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="post-heading">
+              <h1>Embedded platform integrates ESP32 module and RP2040 co-processor</h1>
+              <p>
+                <span class="meta">
+                  Posted by
+                  <a
+                    href="https://www.linkedin.com/in/valentin-g-luchian-178652170/"
+                    onclick="window.open(this.href); return false;"
+                    onkeypress="window.open(this.href); 
+                  return false;"
+                    >Gabriel L</a
+                  >
+                  on November 30, 2022
+                </span>
+              </p>
+            </div>
             <a href="#!"
-              ><img class="img-fluid" src="assets/img/astronomy.avif" alt="..."
+              ><img class="img-fluid align-items-center" src="assets/img/espiff-v3-1-topview-450x259.jpg" alt="..."
             /></a>
             <p>
-              Never in all their history have men been able truly to conceive of
-              the world as one: a single sphere, a globe, having the qualities
-              of a globe, a round earth in which all the directions eventually
-              meet, in which there is no center because every point, or none, is
-              center — an equal earth which all men occupy as equals. The
-              airman's earth, if free men make it, will be truly round: a globe
-              in practice, not in theory.
+              CrowdSupply recently featured the EsPiFF SBC designed for multimedia, firewall and NAS applications. 
+              The EsPiFF combines a ESP32-WROVER module for wireless connectivity and a RP2040 chip functioning as 
+              a coprocessor.
+              The ESP32-WROVER module featured is likely to be the ESP32-WROVER-IE-N16R8 since it provides up to 
+              16MB of Flash memory, 8MB of PSRAM and a connector for an external antenna.  
             </p>
             <p>
-              Science cuts two ways, of course; its products can be used for
-              both good and evil. But there's no turning back from science. The
-              early warnings about technological dangers also come from science.
+              <ul>
+                <li>ESP32-WROVER — ESP32-D0WDQ6 chip (up to 2.40 GHz); 16MB Flash; 8MB PSRAM</li>
+                <li>RP2040 — Dual Arm Cortex M0+ processor (up to 133MHz)</li>
+              </ul>
             </p>
             <p>
-              What was most significant about the lunar voyage was not that man
-              set foot on the Moon but that they set eye on the earth.
+              For storage, there is a MicroSD card, 2KB of fast-speed FRAM, 8Mbits of high-speed ISSI flash and 
+              an unpopulated footprint for a 512Mbit ISSI flash chip. 
             </p>
             <p>
-              A Chinese tale tells of some men sent to harm a young girl who,
-              upon seeing her beauty, become her protectors rather than her
-              violators. That's how I felt seeing the Earth for the first time.
-              I could not help but love and cherish her.
+              The ESP32 module supports 2.4GHz Wi-Fi/Bluetooth + BLE and the board also includes an external 
+              U.FL antenna since the ESP32-module PCB antenna can’t be used due to space restrictions according 
+              to the EsPiFF GitHub.
             </p>
-            <p>
-              For those who have seen the Earth from space, and for the hundreds
-              and perhaps thousands more who will, the experience most certainly
-              changes your perspective. The things that we share in our world
-              are far more valuable than those which divide us.
-            </p>
-            <h2 class="section-heading">The Final Frontier</h2>
+            <h2 class="section-heading">EsPiFF demo application</h2>
             <a href="#!"
               ><img
-                class="img-fluid"
-                src="assets/img/space-final-frontier.avif"
+                class="img-fluid align-items-center"
+                src="assets/img/espiff_HMI_RFID_Rain-450x338.jpg"
                 alt="..."
             /></a>
             <p>
-              There can be no thought of finishing for ‘aiming for the stars.’
-              Both figuratively and literally, it is a task to occupy the
-              generations. And no matter how much progress one makes, there is
-              always the thrill of just beginning.
+              There is also a 10/100M ethernet port via IP101 PHY and PoE (Power-over-Ethernet) headers compatible 
+              with the Raspberry Pi PoE HAT. 
             </p>
             <p>
-              There can be no thought of finishing for ‘aiming for the stars.’
-              Both figuratively and literally, it is a task to occupy the
-              generations. And no matter how much progress one makes, there is
-              always the thrill of just beginning.
+              The 40-pin expansion header provides access to the GPIOs from the RP2040 microcontroller and it 
+              also allows the EsPiFF to be compatible with existing Raspberry Pi HATs.  
             </p>
-            <blockquote class="blockquote">
-              The dreams of yesterday are the hopes of today and the reality of
-              tomorrow. Science has not yet mastered prophecy. We predict too
-              much for the next year and yet far too little for the next ten.
-            </blockquote>
-            <p>
-              Spaceflights cannot be stopped. This is not the work of any one
-              man or even a group of men. It is a historical process which
-              mankind is carrying out in accordance with the natural laws of
-              human development.
-            </p>
-            <h2 class="section-heading">Reaching for the Stars</h2>
-            <p>How to Make Free, Open Source Laboratory Hardware</p>
+            <h2 class="section-heading">Board peripherals</h2>
             <a href="#!"
               ><img
-                class="img-fluid rounded mx-auto d-block"
-                src="assets/img/opensource-tool.webp"
+                class="img-fluid rounded mx-auto d-block align-items-center"
+                src="assets/img/espiff-v3-layout-450x160.png"
                 alt="..."
             /></a>
-            <span class="caption text-muted"
-              >To go places and do things that have never been done before –
-              that’s what living is all about.</span
-            >
             <p>
-              In the not-so-distant future you will read of a scientific
-              breakthrough in an area your daughter was excited about in school.
+              A preliminary datasheet for the latest version of this board can be found here. The EsPiFF GitHub also 
+              specifies that the ESP32 module (master) can interface with the RP2040 (slave) via SPI protocol or UART 
+              protocol. This product is also compatible with Arduino IDE, ESP-IDF, in addition to Apache Nuttx and 
+              Firmata.    
             </p>
+            <h2 class="section-heading">Further information</h2>
             <p>
-              In the journal article you will click on the supplementary
-              materials and be able to download all of the source code needed to
-              replicate the instruments used to do the experiment. You will fire
-              up your home 3-D printer to fabricate the equipment.
+              The EsPiFF can be purchased for $55.00 on CrowSupply.com. The order also includes various connectors and 
+              cables compatible with the board. Shipping costs $8.00 for customers in the U.S and $18.00 to anywhere else. 
+              Orders are estimated to ship around April 2023. 
             </p>
             <p>
               If you'd like to learn more about this, go to
               <a
-                href="https://blogs.scientificamerican.com/guest-blog/science-for-all-how-to-make-free-open-source-laboratory-hardware/"
-                >Science for All</a
+                href="https://www.crowdsupply.com/mdc-service-wittenburg-gmbh/espiff#products"
+                >CrowSupply.com</a
               >
               &middot; Images by
               <a href="https://unsplash.com/">Unsplash</a>
