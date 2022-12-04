@@ -33,6 +33,8 @@
     >
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet">
+    <!-- Custom CSS comment section -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-- Navigation-->
@@ -198,7 +200,7 @@
                   <a
                     href="https://www.linkedin.com/in/valentin-g-luchian-178652170/"
                     onclick="window.open(this.href); return false;"
-                    onkeypress="window.open(this.href); 
+                    onkeypress="window.open(this.href);
                   return false;"
                     >Gabriel L</a
                   >
@@ -300,125 +302,70 @@
               &middot; Images by
               <a href="https://unsplash.com/">Unsplash</a>
             </p>
-            <div class="row d-flex justify-content-center">
-              <div class="col-md-8 col-lg-6">
-                <div class="card shadow-0 border" style="background-color: #f0f2f5;">
-                  <div class="card-body p-4">
-                    <div class="form-outline mb-4">
-                      <input
-                        type="text"
-                        id="addANote"
-                        class="form-control"
-                        placeholder="Type comment..."
-                      />
-                      <label class="form-label" for="addANote">+ Add a note</label>
+            <div class="card-wrapper">
+              <div class="row">
+                <div class="card">
+                  <div class="vote">
+                    <div class="vote-icon plus">
+                      <img src="assets/images/icon-plus.svg" alt="icon-plus">
                     </div>
-            
-                    <div class="card mb-4">
-                      <div class="card-body">
-                        <p>Type your note, and hit enter to add it</p>
-            
-                        <div class="d-flex justify-content-between">
-                          <div class="d-flex flex-row align-items-center">
-                            <img
-                              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp"
-                              alt="avatar"
-                              width="25"
-                              height="25"
-                            />
-                            <p class="small mb-0 ms-2">Martha</p>
-                          </div>
-                          <div class="d-flex flex-row align-items-center">
-                            <p class="small text-muted mb-0">Upvote?</p>
-                            <i
-                              class="far fa-thumbs-up mx-2 fa-xs text-black"
-                              style="margin-top: -0.16rem;"
-                            ></i>
-                            <p class="small text-muted mb-0">3</p>
-                          </div>
-                        </div>
-                      </div>
+                    <p class="vote-text">12</p>
+                    <div class="vote-icon minus">
+                      <img src="assets/images/icon-minus.svg" alt="icon-minus">
                     </div>
-            
-                    <div class="card mb-4">
-                      <div class="card-body">
-                        <p>Type your note, and hit enter to add it</p>
-            
-                        <div class="d-flex justify-content-between">
-                          <div class="d-flex flex-row align-items-center">
-                            <img
-                              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp"
-                              alt="avatar"
-                              width="25"
-                              height="25"
-                            />
-                            <p class="small mb-0 ms-2">Johny</p>
-                          </div>
-                          <div class="d-flex flex-row align-items-center">
-                            <p class="small text-muted mb-0">Upvote?</p>
-                            <i
-                              class="far fa-thumbs-up mx-2 fa-xs text-black"
-                              style="margin-top: -0.16rem;"
-                            ></i>
-                            <p class="small text-muted mb-0">4</p>
-                          </div>
-                        </div>
-                      </div>
+                  </div>
+                  <div class="header">
+                    <div class="avatar">
+                      <img src="assets/images/avatars/image-amyrobson.png" alt="">
                     </div>
-            
-                    <div class="card mb-4">
-                      <div class="card-body">
-                        <p>Type your note, and hit enter to add it</p>
-            
-                        <div class="d-flex justify-content-between">
-                          <div class="d-flex flex-row align-items-center">
-                            <img
-                              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp"
-                              alt="avatar"
-                              width="25"
-                              height="25"
-                            />
-                            <p class="small mb-0 ms-2">Mary Kate</p>
-                          </div>
-                          <div class="d-flex flex-row align-items-center text-primary">
-                            <p class="small mb-0">Upvoted</p>
-                            <i class="fas fa-thumbs-up mx-2 fa-xs" style="margin-top: -0.16rem;"></i>
-                            <p class="small mb-0">2</p>
-                          </div>
-                        </div>
-                      </div>
+                    <p class="name">amyrobson</p>
+                    <p class="date">5 days ago</p>
+                  </div>/
+                  <div class="icon">
+                    <div class="reply">
+                      <img src="assets/images/icon-reply.svg" alt="">
+                      <p>Reply</p>
                     </div>
-            
-                    <div class="card">
-                      <div class="card-body">
-                        <p>Type your note, and hit enter to add it</p>
-            
-                        <div class="d-flex justify-content-between">
-                          <div class="d-flex flex-row align-items-center">
-                            <img
-                              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp"
-                              alt="avatar"
-                              width="25"
-                              height="25"
-                            />
-                            <p class="small mb-0 ms-2">Johny</p>
-                          </div>
-                          <div class="d-flex flex-row align-items-center">
-                            <p class="small text-muted mb-0">Upvote?</p>
-                            <i
-                              class="far fa-thumbs-up ms-2 fa-xs text-black"
-                              style="margin-top: -0.16rem;"
-                            ></i>
-                          </div>
-                        </div>
-                      </div>
+                  </div>
+                  <div class="content">
+                    Impressive! Though it seems the drag feature could be improved. But
+                    overall it looks incredible. You've nailed the design and the
+                    responsiveness at various breakpoints works really well.
+                  </div>
+                  <div class="reply-section">
+                    <div class="reply-avatar">
+                      <img src="assets/images/avatars/image-juliusomo.png" alt="">
                     </div>
+                    <textarea rows="4" cols="50"> </textarea>
+                    <button class="btn" type="button">REPLY</button>
                   </div>
                 </div>
               </div>
+              <div class="row">
+                <div class="comment-section">
+                  <div class="comment-avatar">
+                    <img src="assets/images/avatars/image-juliusomo.png" alt="">
+                  </div>
+                  <textarea placeholder="Add a comment..."></textarea>
+                  <button class="btn btn-send">SEND</button>
+                </div>
+              </div>
             </div>
-          </div>
-          </div>
+            <div class="module-delete">
+              <div class="inner-module">
+                <h3 class="module-title">Delete comment</h3>
+                <p class="module-text">
+                  Are you sure to delete this<br />
+                  comment? This will remove comment<br />
+                  and can't be undone.
+                </p>
+                <div class="btn-wrapper">
+                  <button class="btn btn-cancel">NO, CANCEL</button>
+                  <button class="btn btn-delete">YES, DELETE</button>
+                </div>
+              </div>
+            </div>
+          <br>
           <ul class="pagination justify-content-center">
             <li class="page-item">
               <a class="page-link" href="index.html">Previous</a>
