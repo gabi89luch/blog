@@ -127,27 +127,27 @@ replyButtons.forEach((btn) => {
           <div class="card">
             <div class="vote">
               <div class="vote-icon plus">
-                <img src="images/icon-plus.svg" alt="icon-plus" />
+                <img src="assets/images/icon-plus.svg" alt="icon-plus" />
               </div>
               <p class="vote-text">0</p>
               <div class="vote-icon minus">
-                <img src="images/icon-minus.svg" alt="icon-minus" />
+                <img src="assets/images/icon-minus.svg" alt="icon-minus" />
               </div>
             </div>
             <div class="header">
               <div class="avatar">
-                <img src="images/avatars/image-juliusomo.png" alt="" />
+                <img src="assets/images/avatars/image-juliusomo.png" alt="" />
               </div>
               <p class="name">juliusomo <span class="user-label">you</span></p>
               <p class="date">just now</p>
             </div>
             <div class="icon">
               <div class="delete" onclick="showModule()">
-                <img src="images/icon-delete.svg" alt="" />
+                <img src="assets/images/icon-delete.svg" alt="" />
                 <p>Delete</p>
               </div>
               <div class="edit" onclick="editComment()">
-                <img src="images/icon-edit.svg" alt="" />
+                <img src="assets/images/icon-edit.svg" alt="" />
                 <p>Edit</p>
               </div>
             </div>
@@ -221,27 +221,27 @@ btnSendComment.onclick = () => {
   newRow.innerHTML = `<div class="card">
           <div class="vote">
             <div class="vote-icon plus">
-              <img src="images/icon-plus.svg" alt="icon-plus" />
+              <img src="assets/images/icon-plus.svg" alt="icon-plus" />
             </div>
             <p class="vote-text">0</p>
             <div class="vote-icon minus">
-              <img src="images/icon-minus.svg" alt="icon-minus" />
+              <img src="assets/images/icon-minus.svg" alt="icon-minus" />
             </div>
           </div>
           <div class="header">
             <div class="avatar">
-              <img src="images/avatars/image-juliusomo.png" alt="" />
+              <img src="assets/images/avatars/image-juliusomo.png" alt="" />
             </div>
             <p class="name">juliusomo</p>
             <p class="date">just now</p>
           </div>
           <div class="icon">
               <div class="delete" onclick="showModule()">
-                <img src="images/icon-delete.svg" alt="" />
+                <img src="assets/images/icon-delete.svg" alt="" />
                 <p>Delete</p>
               </div>
               <div class="edit" onclick="editComment()">
-                <img src="images/icon-edit.svg" alt="" />
+                <img src="assets/images/icon-edit.svg" alt="" />
                 <p>Edit</p>
               </div>
           </div>
