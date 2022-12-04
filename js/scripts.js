@@ -257,3 +257,11 @@ btnSendComment.onclick = () => {
   cardWrapper.insertBefore(newRow, btnParrent);
   textArea.value = "";
 };
+// Checking button
+function myFunction() {
+    let person = prompt("Please enter your name", "John Doe");
+    if (person != null) {
+      document.getElementById("demo").innerHTML =
+      "Hello " + person + "! How are you today?";
+    }
+  }
