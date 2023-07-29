@@ -1,78 +1,106 @@
 /*!
-* Start Bootstrap - Clean Blog v6.0.8 (https://startbootstrap.com/theme/clean-blog)
-* Copyright 2013-2022 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/LICENSE)
-*/
-window.addEventListener('DOMContentLoaded', () => {
-    let scrollPos = 0;
-    const mainNav = document.getElementById('mainNav');
-    const headerHeight = mainNav.clientHeight;
-    window.addEventListener('scroll', function() {
-        const currentTop = document.body.getBoundingClientRect().top * -1;
-        if ( currentTop < scrollPos) {
-            // Scrolling Up
-            if (currentTop > 0 && mainNav.classList.contains('is-fixed')) {
-                mainNav.classList.add('is-visible');
-            } else {
-                console.log(123);
-                mainNav.classList.remove('is-visible', 'is-fixed');
-            }
-        } else {
-            // Scrolling Down
-            mainNav.classList.remove(['is-visible']);
-            if (currentTop > headerHeight && !mainNav.classList.contains('is-fixed')) {
-                mainNav.classList.add('is-fixed');
-            }
-        }
-        scrollPos = currentTop;
-    });
-})
+ * Start Bootstrap - Clean Blog v6.0.8 (https://startbootstrap.com/theme/clean-blog)
+ * Copyright 2013-2022 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/LICENSE)
+ */
+window.addEventListener("DOMContentLoaded", () => {
+  let scrollPos = 0;
+  const mainNav = document.getElementById("mainNav");
+  const headerHeight = mainNav.clientHeight;
+  window.addEventListener("scroll", function () {
+    const currentTop = document.body.getBoundingClientRect().top * -1;
+    if (currentTop < scrollPos) {
+      // Scrolling Up
+      if (currentTop > 0 && mainNav.classList.contains("is-fixed")) {
+        mainNav.classList.add("is-visible");
+      } else {
+        console.log(123);
+        mainNav.classList.remove("is-visible", "is-fixed");
+      }
+    } else {
+      // Scrolling Down
+      mainNav.classList.remove(["is-visible"]);
+      if (
+        currentTop > headerHeight &&
+        !mainNav.classList.contains("is-fixed")
+      ) {
+        mainNav.classList.add("is-fixed");
+      }
+    }
+    scrollPos = currentTop;
+  });
+});
 
 // Scroll to top button
-const scrollTop = document.querySelector(".scrollTop"); 
-	       
+const scrollTop = document.querySelector(".scrollTop");
+
 window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 100){
-        scrollTop.classList.add("active");
-    } else{
-        scrollTop.classList.remove("active");  
-    }
-})
+  if (window.pageYOffset > 100) {
+    scrollTop.classList.add("active");
+  } else {
+    scrollTop.classList.remove("active");
+  }
+});
+
+function greetUser() {
+  // Ask the user to input their name using a popup input box
+  var userName = prompt("Please enter your name:");
+
+  // Check if the user entered a name
+  if (userName) {
+    // Display a personalized greeting in a popup message
+    var greeting = "Hello, " + userName + "! You have checked in!";
+    alert(greeting);
+  } else {
+    // If the user didn't enter a name, display a generic message
+    alert("No name added and action canceled!");
+  }
+}
 
 // Geolocation HTML5
-    // Set up global variable
-    var result;
-    
-    function showPosition() {
-        // Store the element where the page displays the result
-        result = document.getElementById("result");
-        
-        // If geolocation is available, try to get the visitor's position
-        if(navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-            result.innerHTML = "Getting the position information...";
-        } else {
-            alert("Sorry, your browser does not support HTML5 geolocation.");
-        }
-    };
-    
-    // Define callback function for successful attempt
-    function successCallback(position) {
-        result.innerHTML = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
-    }
-    
-    // Define callback function for failed attempt
-    function errorCallback(error) {
-        if(error.code == 1) {
-            result.innerHTML = "You've decided not to share your position, but it's OK. We won't ask you again.";
-        } else if(error.code == 2) {
-            result.innerHTML = "The network is down or the positioning service can't be reached.";
-        } else if(error.code == 3) {
-            result.innerHTML = "The attempt timed out before it could get the location data.";
-        } else {
-            result.innerHTML = "Geolocation failed due to unknown error.";
-        }
-    }
+// Set up global variable
+var result;
+
+function showPosition() {
+  // Store the element where the page displays the result
+  result = document.getElementById("result");
+
+  // If geolocation is available, try to get the visitor's position
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    result.innerHTML = "Getting the position information...";
+  } else {
+    alert("Sorry, your browser does not support HTML5 geolocation.");
+  }
+}
+
+// Define callback function for successful attempt
+function successCallback(position) {
+  result.innerHTML =
+    "Your current position is (" +
+    "Latitude: " +
+    position.coords.latitude +
+    ", " +
+    "Longitude: " +
+    position.coords.longitude +
+    ")";
+}
+
+// Define callback function for failed attempt
+function errorCallback(error) {
+  if (error.code == 1) {
+    result.innerHTML =
+      "You've decided not to share your position, but it's OK. We won't ask you again.";
+  } else if (error.code == 2) {
+    result.innerHTML =
+      "The network is down or the positioning service can't be reached.";
+  } else if (error.code == 3) {
+    result.innerHTML =
+      "The attempt timed out before it could get the location data.";
+  } else {
+    result.innerHTML = "Geolocation failed due to unknown error.";
+  }
+}
 // Comment section
 // VOTE
 const minus = document.querySelectorAll(".minus");
@@ -259,9 +287,9 @@ btnSendComment.onclick = () => {
 };
 // Checking button
 function myFunction() {
-    let person = prompt("Please enter your name", "John Doe");
-    if (person != null) {
-      document.getElementById("demo").innerHTML =
+  let person = prompt("Please enter your name", "John Doe");
+  if (person != null) {
+    document.getElementById("demo").innerHTML =
       "Hello " + person + "! How are you today?";
-    }
   }
+}
