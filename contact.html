@@ -151,16 +151,8 @@
               and I will get back to you as soon as possible!
             </p>
             <div class="my-5">
-              <!-- * * * * * * * * * * * * * * *-->
-              <!-- * * SB Forms Contact Form * *-->
-              <!-- * * * * * * * * * * * * * * *-->
-              <!-- This form is pre-integrated with SB Forms.-->
-              <!-- To make this form functional, sign up at-->
-              <!-- https://startbootstrap.com/solution/contact-forms-->
-              <!-- to get an API token!-->
               <form
                 id="contactForm"
-                data-sb-form-api-token="413b94c9-6937-4640-864f-75d66eb1012d"
               >
                 <div class="form-floating">
                   <input
@@ -168,12 +160,12 @@
                     id="name"
                     type="text"
                     placeholder="Enter your name..."
-                    data-sb-validations="required"
+                    data-validations="required"
                   />
                   <label for="name">Name</label>
                   <div
                     class="invalid-feedback"
-                    data-sb-feedback="name:required"
+                    data-feedback="name:required"
                   >
                     A name is required.
                   </div>
@@ -184,16 +176,16 @@
                     id="email"
                     type="email"
                     placeholder="Enter your email..."
-                    data-sb-validations="required,email"
+                    data-validations="required,email"
                   />
                   <label for="email">Email address</label>
                   <div
                     class="invalid-feedback"
-                    data-sb-feedback="email:required"
+                    data-feedback="email:required"
                   >
                     An email is required.
                   </div>
-                  <div class="invalid-feedback" data-sb-feedback="email:email">
+                  <div class="invalid-feedback" data-feedback="email:email">
                     Email is not valid.
                   </div>
                 </div>
@@ -203,12 +195,12 @@
                     id="phone"
                     type="tel"
                     placeholder="Enter your phone number..."
-                    data-sb-validations="required"
+                    data-validations="required"
                   />
                   <label for="phone">Phone Number</label>
                   <div
                     class="invalid-feedback"
-                    data-sb-feedback="phone:required"
+                    data-feedback="phone:required"
                   >
                     A phone number is required.
                   </div>
@@ -224,7 +216,7 @@
                   <label for="message">Message</label>
                   <div
                     class="invalid-feedback"
-                    data-sb-feedback="message:required"
+                    data-feedback="message:required"
                   >
                     A message is required.
                   </div>
@@ -250,11 +242,11 @@
                 </div>
                 <!-- Submit Button-->
                 <button
-                  class="btn btn-primary text-uppercase disabled"
+                  class="btn btn-primary text-uppercase"
                   id="submitButton"
                   type="submit"
                 >
-                  Send
+                  Submit
                 </button>
               </form>
             </div>

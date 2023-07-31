@@ -31,6 +31,106 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Function to save the user's name in local storage and update the welcome message
+function saveName() {
+  const nameInput = document.getElementById("name");
+  const name = nameInput.value.trim();
+
+  if (name === "") {
+      alert("Please enter your name.");
+      return;
+  }
+
+  // Save the name in local storage
+  localStorage.setItem("visitorName", name);
+
+  // Update the welcome message in the header
+  const welcomeMessage = document.getElementById("welcome-message");
+  welcomeMessage.textContent = `Welcome, ${name}!`;
+}
+
+// This event listener waits for the DOM (Document Object Model) to be fully loaded before executing the provided function.
+document.addEventListener('DOMContentLoaded', function () {
+  // Get the reference to the contact form and the submit button element.
+  const form = document.getElementById('contactForm');
+  const submitButton = document.getElementById('submitButton');
+
+  // Attach a 'submit' event listener to the form. This function will be executed when the form is submitted.
+  form.addEventListener('submit', function (event) {
+      // Prevent the default form submission behavior, which would cause a page reload.
+      event.preventDefault();
+
+      // Get the values entered by the user in the form fields.
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      // Create a JavaScript object to store the form data.
+      const formData = {
+          name: name,
+          email: email,
+          phone: phone,
+          message: message
+      };
+
+      // Convert the form data object to a JSON string.
+      const jsonData = JSON.stringify(formData);
+
+      // Save the form data to the JSON file using the saveFormData function.
+      saveFormData(jsonData);
+
+      // Show a success message to the user (optional).
+      showSuccessMessage();
+
+      // Reset the form fields after successful submission (optional).
+      form.reset();
+  });
+
+  // Function to save the form data to a JSON file.
+  function saveFormData(jsonData) {
+      // Modify this path to your desired location to save the JSON file.
+      const saveFilePath = 'submissions.json';
+
+      // Fetch the existing data (if any) from the JSON file.
+      fetch(saveFilePath)
+          .then(response => response.json())
+          .then(data => {
+              // Append the new form data to the existing data array or create a new array if there is no existing data.
+              const allData = data ? [...data, jsonData] : [jsonData];
+
+              // Convert the array containing all form data to a JSON string.
+              const allDataJson = JSON.stringify(allData);
+
+              // Save the updated data to the JSON file using a POST request.
+              fetch(saveFilePath, {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: allDataJson
+              });
+          })
+          .catch(error => console.error('Error fetching data:', error));
+  }
+
+  function redirectToConfirmationPopup() {
+      // Show a popup message to the user as a confirmation.
+      alert('Thank you for your message! We have received your submission.');
+
+      // Optionally, you can reset the form after showing the confirmation message.
+      form.reset();
+}
+
+  // Function to show a success message to the user (optional).
+  function showSuccessMessage() {
+      // You can show a success message here if you want.
+      // Get the element with the 'submitSuccessMessage' ID and remove the 'd-none' class to display it.
+      const successMessage = document.getElementById('submitSuccessMessage');
+      successMessage.classList.remove('d-none');
+  }
+});
+
 // Scroll to top button
 const scrollTop = document.querySelector(".scrollTop");
 
