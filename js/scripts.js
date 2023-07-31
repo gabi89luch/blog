@@ -42,6 +42,8 @@ window.addEventListener("scroll", () => {
   }
 });
 
+//Greeting users
+// Define a function called greetUser
 function greetUser() {
   // Ask the user to input their name using a popup input box
   var userName = prompt("Please enter your name:");
@@ -50,10 +52,11 @@ function greetUser() {
   if (userName) {
     // Display a personalized greeting in a popup message
     var greeting = "Hello, " + userName + "! You have checked in!";
+    // Show the personalized greeting in an alert box
     alert(greeting);
   } else {
     // If the user didn't enter a name, display a generic message
-    alert("No name added and action canceled!");
+    alert("No name added!");
   }
 }
 
@@ -101,6 +104,7 @@ function errorCallback(error) {
     result.innerHTML = "Geolocation failed due to unknown error.";
   }
 }
+
 // Comment section
 // VOTE
 const minus = document.querySelectorAll(".minus");
