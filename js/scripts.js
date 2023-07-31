@@ -205,6 +205,51 @@ function errorCallback(error) {
   }
 }
 
+// Form validation and submission handling
+const contactForm = document.getElementById("contactForm");
+const submitSuccessMessage = document.getElementById("submitSuccessMessage");
+const submitErrorMessage = document.getElementById("submitErrorMessage");
+const genderSelect = document.getElementById("gender");
+const otherGenderInputContainer = document.getElementById("otherGenderInputContainer");
+const otherGenderInput = document.getElementById("otherGender");
+
+genderSelect.addEventListener("change", function () {
+  const selectedGender = genderSelect.value;
+  if (selectedGender === "other") {
+    otherGenderInputContainer.style.display = "block";
+    otherGenderInput.setAttribute("required", "required");
+  } else {
+    otherGenderInputContainer.style.display = "none";
+    otherGenderInput.removeAttribute("required");
+  }
+});
+
+contactForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  // Validate the form fields
+  if (contactForm.checkValidity()) {
+    // Form data is valid, proceed with submission
+    submitSuccessMessage.classList.remove("d-none");
+    submitErrorMessage.classList.add("d-none");
+
+    // You can handle form submission here (e.g., sending data to the server)
+  } else {
+    // Form data is invalid, show error message
+    submitSuccessMessage.classList.add("d-none");
+    submitErrorMessage.classList.remove("d-none");
+  }
+});
+
+// Reset the form and hide the success/error messages
+const resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", function () {
+  otherGenderInputContainer.style.display = "none";
+  otherGenderInput.removeAttribute("required");
+  submitSuccessMessage.classList.add("d-none");
+  submitErrorMessage.classList.add("d-none");
+});
+
 // Comment section
 // VOTE
 const minus = document.querySelectorAll(".minus");
