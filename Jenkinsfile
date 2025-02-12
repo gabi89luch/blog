@@ -1,10 +1,6 @@
 pipeline {
     agent any
     
-    tools {
-        terraform 'terraform'
-    }
-    
     stages {
         stage('Checkout') {
             steps {
@@ -19,9 +15,11 @@ pipeline {
                     test -d css || exit 1
                     test -d js || exit 1
                     test -d terraform || exit 1
+                    test -d posts || exit 1
                     test -f index.html || exit 1
-                    test -f css/styles.css || exit 1
-                    test -f js/script.js || exit 1
+                    test -f css/main.css || exit 1
+                    test -f css/posts.css || exit 1
+                    test -f js/main.js || exit 1
                     test -f terraform/main.tf || exit 1
                 '''
             }
@@ -38,27 +36,23 @@ pipeline {
             }
         }
         
-        stage('Terraform Format Check') {
+        stage('Terraform Checks') {
             steps {
-                dir('terraform') {
-                    sh 'terraform fmt -check -recursive'
-                }
-            }
-        }
-        
-        stage('Terraform Init') {
-            steps {
-                dir('terraform') {
-                    sh 'terraform init -backend=false'
-                }
-            }
-        }
-        
-        stage('Terraform Validate') {
-            steps {
-                dir('terraform') {
-                    sh 'terraform validate'
-                }
+                sh '''
+                    # Install Terraform if not present
+                    if ! command -v terraform &> /dev/null; then
+                        echo "Installing Terraform..."
+                        sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+                        curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+                        sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+                        sudo apt-get update && sudo apt-get install -y terraform
+                    fi
+                    
+                    cd terraform
+                    terraform init -backend=false
+                    terraform validate
+                    terraform fmt -check -recursive
+                '''
             }
         }
     }
