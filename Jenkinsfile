@@ -50,6 +50,16 @@ pipeline {
             }
         }
 
+        stage('Terraform Import') {
+            steps {
+                dir('terraform') {
+                    sh '''
+                        terraform import github_repository.blog blog || true
+                    '''
+                }
+            }
+        }
+
         stage('Terraform Plan') {
             steps {
                 dir('terraform') {
