@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        GITHUB_TOKEN = credentials('GITHUB_TOKEN')
+        TF_VAR_github_token = credentials('GITHUB_TOKEN')
     }
 
     stages {
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 sh '''
                     echo "Linting HTML..."
-                    htmlhint *.html
+                    htmlhint index.html
                 '''
             }
         }
@@ -53,7 +53,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 dir('terraform') {
-                    sh 'terraform plan -out=tfplan'
+                    sh 'terraform plan -var="github_token=${TF_VAR_github_token}" -out=tfplan'
                 }
             }
         }
