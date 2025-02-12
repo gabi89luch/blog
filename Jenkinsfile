@@ -37,7 +37,7 @@ pipeline {
             steps {
                 sh '''
                     echo "Installing htmlhint..."
-                    npm install -g htmlhint
+                    sudo npm install -g htmlhint -y
                     echo "Linting HTML..."
                     htmlhint *.html
                 '''
