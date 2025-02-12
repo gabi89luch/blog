@@ -1,13 +1,17 @@
 pipeline {
     agent any
-    
+
+    tools {
+        terraform 'terraform'
+    }
+
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
-        
+
         stage('Verify Structure') {
             steps {
                 sh '''
@@ -24,7 +28,7 @@ pipeline {
                 '''
             }
         }
-        
+
         stage('Lint HTML') {
             steps {
                 sh '''
@@ -35,36 +39,34 @@ pipeline {
                 '''
             }
         }
-        
-        stage('Terraform Checks') {
+
+        stage('Terraform Init') {
             steps {
-                sh '''
-                    # Install Terraform if not present
-                    if ! command -v terraform &> /dev/null; then
-                        echo "Installing Terraform..."
-                        sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
-                        curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-                        sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-                        sudo apt-get update && sudo apt-get install -y terraform
-                    fi
-                    
-                    cd terraform
-                    terraform init -backend=false
-                    terraform validate
-                    terraform fmt -check -recursive
-                '''
+                dir('terraform') {
+                    sh 'terraform init'
+                }
+            }
+        }
+
+        stage('Terraform Plan') {
+            steps {
+                dir('terraform') {
+                    sh 'terraform plan -out=tfplan'
+                }
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                dir('terraform') {
+                    sh 'terraform apply -auto-approve tfplan'
+                }
             }
         }
     }
-    
+
     post {
-        success {
-            echo 'Verification completed successfully!'
-        }
-        failure {
-            echo 'Verification failed!'
-        }
-        always {
+        cleanup {
             cleanWs()
         }
     }
