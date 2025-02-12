@@ -1,0 +1,61 @@
+:root {
+    --bs-primary: #0d6efd;
+    --bs-primary-rgb: 13, 110, 253;
+}
+
+body {
+    padding-top: 56px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(var(--bs-primary-rgb), 0.9), rgba(var(--bs-primary-rgb), 0.7)),
+                url('https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?auto=format&fit=crop&w=2000');
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 0;
+    margin-bottom: 2rem;
+}
+
+/* Animations */
+.navbar-brand, .nav-link {
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* Card hover effects */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+
+/* Social buttons */
+.btn-outline-primary {
+    border-width: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bs-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0b5ed7;
+}
