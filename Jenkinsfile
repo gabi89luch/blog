@@ -5,6 +5,10 @@ pipeline {
         terraform 'terraform'
     }
 
+    environment {
+        GITHUB_TOKEN = credentials('GITHUB_TOKEN')
+    }
+
     stages {
         stage('Checkout') {
             steps {
