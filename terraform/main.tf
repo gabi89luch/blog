@@ -7,22 +7,29 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+  backend "local" {}
 }
 
 provider "github" {
-  # Token stored as environment variable GITHUB_TOKEN
+  token = var.github_token
 }
 
-# Example resource (customize as needed)
 resource "github_repository" "blog" {
   name        = "blog"
   description = "My tech blog"
   visibility  = "public"
 
   pages {
+    build_type = "workflow"
     source {
       branch = "main"
       path   = "/"
     }
   }
+
+  has_issues    = true
+  has_projects  = true
+  has_wiki      = true
+  has_downloads = true
 }
