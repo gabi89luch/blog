@@ -5,10 +5,6 @@ pipeline {
         terraform 'terraform'
     }
 
-    triggers {
-        githubPush() // Add this line to enable GitHub webhook trigger
-    }
-
     environment {
         TF_VAR_github_token = credentials('GITHUB_TOKEN')
     }
