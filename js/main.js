@@ -35,5 +35,28 @@ function displayPosts() {
     blogContainer.innerHTML = postsHTML;
 }
 
-// Initialize the blog posts when the page loads
-document.addEventListener('DOMContentLoaded', displayPosts);
+// Dark mode functionality
+function initializeDarkMode() {
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        html.setAttribute('data-bs-theme', savedTheme);
+        themeToggle.checked = savedTheme === 'dark';
+    }
+
+    // Toggle theme
+    themeToggle.addEventListener('change', () => {
+        const newTheme = themeToggle.checked ? 'dark' : 'light';
+        html.setAttribute('data-bs-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+}
+
+// Initialize everything when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    displayPosts();
+    initializeDarkMode();
+});

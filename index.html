@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,18 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Tech Journey</a>
+            <div class="brand-container">
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider">
+                        <span class="icons">
+                            <i class="bi bi-sun-fill"></i>
+                            <i class="bi bi-moon-fill"></i>
+                        </span>
+                    </span>
+                </label>
+                <a class="navbar-brand fw-bold" href="#">Tech Journey</a>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,7 +61,7 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-5 bg-light">
+    <section id="about" class="py-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
@@ -60,7 +71,7 @@
                             <div class="mb-4">
                                 <i class="bi bi-person-circle display-1 text-primary"></i>
                             </div>
-                            <p class="lead">Hi! I'm [Your Name], a passionate tech enthusiast documenting my journey through the ever-evolving world of technology. Here, I share my experiences, learnings, and insights as I navigate through different technologies and challenges.</p>
+                            <p class="lead">Hi! I'm Gabriel, a passionate tech enthusiast that has started documenting his journey through the ever-evolving world of technology. Here, I share my experiences, learnings, and insights as I navigate through different technologies and challenges.</p>
                             <div class="d-flex justify-content-center gap-3 mt-4">
                                 <a href="#" class="btn btn-outline-primary"><i class="bi bi-github"></i> GitHub</a>
                                 <a href="#" class="btn btn-outline-primary"><i class="bi bi-linkedin"></i> LinkedIn</a>
