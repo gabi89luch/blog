@@ -1,11 +1,14 @@
+/* No need to redefine root variables - they're inherited from main.css */
 .blog-card {
     height: 100%;
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blog-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    box-shadow: 0 1rem 3rem var(--card-shadow) !important;
 }
 
 .blog-card .card-title {
@@ -13,7 +16,7 @@
 }
 
 .blog-date {
-    color: #6c757d;
+    color: var(--text-muted);
     font-size: 0.875rem;
 }
 
@@ -23,6 +26,7 @@
     align-items: center;
     text-decoration: none;
     font-weight: 500;
+    color: var(--bs-primary);
 }
 
 .read-more:after {
@@ -35,46 +39,12 @@
     transform: translateX(5px);
 }
 
-/* Dark mode styles */
-[data-bs-theme="dark"] .blog-card {
-    background-color: #242424;
-    border-color: #333333;
-}
-
-[data-bs-theme="dark"] .blog-card:hover {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.3)!important;
-}
-
-[data-bs-theme="dark"] .blog-date {
-    color: #adb5bd;
-}
-
-[data-bs-theme="dark"] .card-text {
-    color: #e0e0e0;
-}
-
-[data-bs-theme="dark"] .read-more {
-    color: var(--bs-primary);
-}
-
-[data-bs-theme="dark"] .read-more:hover {
-    color: #0d6efd;
-}
-
+/* Dark mode specific overrides if needed */
 [data-bs-theme="dark"] .badge {
-    background-color: #0d6efd !important;
+    background-color: var(--bs-primary) !important;
     color: #ffffff;
 }
 
-[data-bs-theme="dark"] .blog-card .card-title {
-    color: #0d6efd;
-}
-
-/* Dark mode specific shadows */
-[data-bs-theme="dark"] .shadow-sm {
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.3)!important;
-}
-
 [data-bs-theme="dark"] .card-body {
-    color: #e0e0e0;
+    color: var(--bs-body-color);
 }
