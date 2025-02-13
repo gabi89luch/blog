@@ -34,3 +34,47 @@
 .read-more:hover:after {
     transform: translateX(5px);
 }
+
+/* Dark mode styles */
+[data-bs-theme="dark"] .blog-card {
+    background-color: #242424;
+    border-color: #333333;
+}
+
+[data-bs-theme="dark"] .blog-card:hover {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.3)!important;
+}
+
+[data-bs-theme="dark"] .blog-date {
+    color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .card-text {
+    color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] .read-more {
+    color: var(--bs-primary);
+}
+
+[data-bs-theme="dark"] .read-more:hover {
+    color: #0d6efd;
+}
+
+[data-bs-theme="dark"] .badge {
+    background-color: #0d6efd !important;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .blog-card .card-title {
+    color: #0d6efd;
+}
+
+/* Dark mode specific shadows */
+[data-bs-theme="dark"] .shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.3)!important;
+}
+
+[data-bs-theme="dark"] .card-body {
+    color: #e0e0e0;
+}
